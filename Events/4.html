@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Bg Color Changer</title>
+</head>
+
+<body>
+
+    <h1>JS Bg Color Changer</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        const randomColor = function () {
+            const hexValue = "0123456789ABCDEF";
+            let colorValue = "#";
+            
+            for (let i = 0; i < 6; i++) {
+                colorValue += hexValue[Math.floor(Math.random() * 16)];
+            }
+            
+            return colorValue;
+        }
+
+        let intervalId;
+
+        const startChangeColor = function () {
+            if (!intervalId) {
+                intervalId = setInterval(() => {
+                    document.body.style.backgroundColor = randomColor();
+                }, 1000);
+            }
+        }
+
+        const stopChangeColor = function () {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        document.querySelector("#start").addEventListener('click', startChangeColor);
+        document.querySelector("#stop").addEventListener('click', stopChangeColor);
+    </script>
+
+</body>
+
+</html>

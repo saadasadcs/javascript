@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeinterval</title>
+</head>
+
+<body>
+    <h1>Click Start To start</h1>
+
+    <h1>Click Stop To stop</h1>
+
+    <button id="start-btn">Start</button>
+
+    <button id="stop-btn">Stop</button>
+
+    <script>
+        
+        // const toStart = function(){
+
+        //     console.log("Hello Brother")
+
+        // }
+
+        // const toStop = setInterval(toStart,1000)
+
+        // clearInterval(toStop)
+
+
+        //     const sayDate = function(str){
+        //     console.log(str, Date.now());
+        // }
+
+        // const intervalId = setInterval(sayDate, 1000, "hi")
+
+        // clearInterval(intervalId)
+
+
+
+
+        //Activity
+
+        let intervalCheck;
+
+        document.querySelector("#start-btn").addEventListener("click", function () {
+
+            if (!intervalCheck) {
+                intervalCheck = setInterval(function () {
+                    console.log("Interval is running");
+                }, 1000);
+
+
+                console.log("Start Button is Clicked");
+            }
+
+        });
+
+
+        document.querySelector("#stop-btn").addEventListener("click", function () {
+
+            if (intervalCheck) {
+                clearInterval(intervalCheck);
+
+                intervalCheck = null;
+
+                console.log("Stopped Button is clicked");
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

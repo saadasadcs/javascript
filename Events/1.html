@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+
+        // not a goodApproach
+
+        // document.getElementById('river').onclick = function(){
+        //     alert(' River is Clicked ')
+        // }
+
+
+        //Better Approach 
+        
+        // third parameter --- false => bubbling up --> bottom top
+
+        // document.getElementById('images').addEventListener('click' , (e)=>{
+        //     console.log(" You Click On --> ul id ")
+        // },false)
+
+        // document.getElementById('owl').addEventListener('click' , (e)=>{
+        //     console.log("You Click on Owl")
+        // },false)
+
+
+
+
+
+        // third parameter --- true => Capturing Mode --> top to bottom
+
+        // document.getElementById('images').addEventListener('click' , (e)=>{
+        //     console.log(" You Click On images under --> ul id ")
+        // },true)
+
+        // document.getElementById('owl').addEventListener('click' , (e)=>{
+        //     console.log("You Click on Owl")
+        // },true)
+
+
+
+
+
+        // if want to stop event propagation
+
+        // document.getElementById('owl').addEventListener('click' , (e)=>{
+        //     e.stopPropagation()
+        //     console.log("You Click on Owl")
+        // },true)
+
+
+
+
+
+        // document.getElementById('google').addEventListener("click" , (e) =>{
+        //     e.preventDefault()
+        //     console.log("Google Clicked")
+        // })
+
+
+
+
+        
+        // Activity
+
+        document.querySelector("#images").addEventListener("click", (e)=>{
+            console.log(e.target.tagName)
+
+            if(e.target.tagName === 'IMG'){
+
+                console.log(e.target.id)
+                
+                const removeItem = e.target.parentNode // parent node --> li
+                
+                removeItem.remove()
+
+            }
+
+            // const removeItem = e.target.parentNode
+
+            // removeItem.parentNode.removeChild(removeItem) // parent node --> ul
+
+        })
+
+    </script>
+
+</body>
+
+</html>

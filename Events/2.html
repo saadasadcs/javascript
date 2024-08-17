@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+
+<body>
+
+    <h1>To stop setTimeout Method Click on the Stop Button</h1>
+
+    <button id="stop-btn"> Stop </button>
+
+
+    <script>
+
+        // setTimeout -> handler Or Callback function , time in sec = number
+
+
+
+        // one way
+
+        // setTimeout(function(){
+        //     console.log("Hello World")
+        // },2000)
+
+
+
+        //2nd way pass the reference -> handler
+
+        //     const hello = function(){
+        //         console.log("Hello World")
+        //     }
+
+        //    setTimeout(hello,2000)
+
+
+
+        //Activity
+
+        const toStop = setTimeout(function(){
+
+            document.querySelector("h1").innerHTML = "You did not Press the button To Stop"
+
+        }, 3000)
+
+        document.querySelector("#stop-btn").addEventListener('click' , () => {
+            clearTimeout(toStop)
+            console.log("Stopped Button is clicked")
+        })
+
+    </script>
+</body>
+
+</html>
