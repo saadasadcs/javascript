@@ -72,44 +72,6 @@ NOTES :
 
 
 
-
-// Splice
-
-let array1 = [1, 2, 3, 4, 5];
-
-array1.splice(2, 2);  // Start at index 2, remove 2 elements
-
-console.log(array1); // Output: [1, 2, 5]
-
-
-let array2 = [1, 2, 5];
-
-array2.splice(2, 0, 3, 4); // Start at index 2, remove 0 elements, add 3 and 4
-
-console.log(array2); // Output: [1, 2, 3, 4, 5]
-
-
-
-let array3 = [1, 2, 3, 4, 5];
-
-array3.splice(2, 2, 'a', 'b'); // Start at index 2, remove 2 elements, add 'a' and 'b'
-
-console.log(array3); // Output: [1, 2, 'a', 'b', 5]
-
-/*
-NOTES :
-
-    splice(start, deleteCount): Removes elements from the original array.
-
-    splice(start, deleteCount, item1, item2, ...): Removes elements and adds new elements.
-
-    splice(start, 0, item1, item2, ...): Adds elements without removing any.
-*/
-
-
-
-
-
 // const newStringOne = "   SAAD    "
 
 // console.log(newStringOne);
