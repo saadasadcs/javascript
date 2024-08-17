@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: white;">
+   
+    <ul class="mern">
+        <li>MongoDB</li>
+    </ul>
+
+</body>
+
+<script>
+
+    // not a optimize way -> traverse from the start each time
+
+    function addLangName (LangName)
+    {
+        const li = document.createElement('li')
+
+        li.innerHTML = `${LangName}`
+
+        document.querySelector('.mern').appendChild(li)
+    }
+
+    addLangName("Express")
+
+    addLangName("React")
+
+    
+    
+    // optimize way
+
+    function addLiInOptimizeWay (langName)
+    {
+        const li = document.createElement('li');
+
+        // const liContainer = document.createTextNode(langName);
+
+        li.appendChild(document.createTextNode(langName))
+
+        document.querySelector('.mern').appendChild(li)
+
+    }
+
+    addLiInOptimizeWay("Node")
+
+    
+    
+    // Edit
+
+    const editLi = document.querySelector('li:nth-child(2)');
+
+    // editLi.innerHTML = "Express JS - 1" // 1st Method -> but not optimize 
+    
+    
+    
+    // 2nd Method
+    
+    // const newLi = document.createElement('li')
+    
+    // newLi.appendChild(document.createTextNode("Express JS - 2"));
+    
+    // editLi.replaceWith(newLi);
+
+
+
+    //3rd Method
+
+    editLi.outerHTML = "<li> Express JS - 3 </li>"
+
+
+    //Remove
+
+    const temp = document.querySelector('li:last-child');
+    
+    temp.remove();
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning </title>
+</head>
+<body style="background-color: black; color: white;">
+
+    <script>
+        const myDiv = document.createElement("div")
+
+        console.log(myDiv)
+
+        myDiv.id = "myDivId"
+
+        myDiv.className = "divCLass"
+
+        // myDiv.title = "hello"
+        
+        myDiv.setAttribute("title","myFirstDiv")
+
+        myDiv.style.backgroundColor = "red"
+
+        myDiv.style.padding = "15px"
+
+        const divContainer = document.createTextNode("Hell, Welcome To my div")
+
+        myDiv.appendChild(divContainer)
+
+        document.body.appendChild(myDiv)
+
+    </script>
+    
+</body>
+</html>
