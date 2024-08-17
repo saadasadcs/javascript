@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEXICAL AND CLOUSER IMPLEMENTGATION</title>
+</head>
+
+<body style="background-color: #313131;">
+
+    <h1>TRAFIC LIGHT COLORS</h1>
+
+    <button id="red">Red</button>
+
+    <button id="yellow">Yellow</button>
+
+    <button id="green">Green</button>
+
+    <script>
+
+        // not a good practice
+
+        // document.getElementById('red').addEventListener('click', () => {
+        //     document.body.style.backgroundColor = 'red'
+        // })
+
+        // document.getElementById('yellow').addEventListener('click', () => {
+        //     document.body.style.backgroundColor = 'yellow'
+        // })
+
+        // document.getElementById('green').addEventListener('click', () => {
+        //     document.body.style.backgroundColor = 'green'
+        // })
+
+
+        // lexical and clouser in real life scenario
+
+        function clickHandler ( color )
+        {
+           return function()
+           {
+
+            document.body.style.backgroundColor = `${color}`
+
+           }
+
+        }
+
+        document.getElementById('red').onclick = clickHandler('red')
+
+        document.getElementById('yellow').onclick = clickHandler('yellow')
+
+        document.getElementById('green').onclick = clickHandler('green')
+
+    </script>
+
+</body>
+
+</html>

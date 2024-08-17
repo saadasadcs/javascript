@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clouser IN JS </title>
+</head>
+
+<body>
+
+    <script>
+        function makeFunc() 
+        {
+            const name = "Saad";
+
+            function displayName() 
+            {
+                console.log(name);
+            }
+            
+            return displayName;
+
+            /*
+
+            CLOUSER EXPLAINATION 
+
+                POINT TO BE NOTED :
+
+                    when you return an entire function, then not only the function is returned,
+
+                    But its entire scope is returned, not just the scope but its lexical scope 
+
+                    is returned
+            */
+        }
+
+        const myFunc = makeFunc();
+        
+        myFunc();
+
+    </script>
+
+</body>
+
+</html>

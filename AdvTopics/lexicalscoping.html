@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scoping</title>
+</head>
+<body style="background-color: #212121;">
+
+    <script>
+
+        // Lexical Scoping
+
+        function outerfun()
+        {
+            let name = "Saad"
+
+            // console.log(`OUTER FUNCTION ---> [ ${innerName} ]`) // Cannot Accessible beacuse a parent cannot inherit from child
+
+            function innerone()
+            {
+                let innerName = "Saadiee"
+
+                console.log(`INSIDE INNER ONE FUNCTION  ---> [ ${name} ]`) // Can access properties of parent 
+            }
+
+            innerone()
+
+            function innerTwo ()
+            {
+                console.log(`INSIDE TWO ONE FUNCTION  ---> [ ${name} ]`) // Can access properties of parent
+
+                
+                // console.log(`INSIDE TWO ONE FUNCTION  ---> [ ${innerName} ]`) // Cannot access properties of sibling
+            }
+
+            innerTwo()
+        }
+
+        outerfun()
+
+        console.log(`OUTER FUNCTION ---> [ ${name} ]`) // cannot accessible outside the scope because name is defined in the outerfun which has its own scope 
+
+    </script>
+    
+</body>
+</html>
