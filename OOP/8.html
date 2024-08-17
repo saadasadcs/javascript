@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bind () </title>
+</head>
+<body>
+
+    <button> CLick Here </button>
+
+    <script>
+
+        /*
+            NOTES : bind() Method
+
+                Definition:
+
+                    bind() is a JavaScript method that creates a new function.
+                    The new function has its this keyword set to a specific value.
+                    
+                Purpose:
+
+                    Ensures the function maintains the correct this context.
+                    Especially useful when passing functions as arguments or using them in callbacks.
+                    Key Concepts:
+
+                this Context:
+
+                    Refers to the object currently executing the code.
+                    The value of this can change depending on how a function is called.
+                    
+                Binding Functions:
+
+                    A function’s this context can vary based on invocation.
+                    bind() fixes the value of this, ensuring it always refers to a specific object.
+
+        */
+
+        class route{
+            constructor() {
+
+                this.name = " GOOGLE";
+
+                this.url = "https://www.google.com/"
+
+                document
+                    .querySelector('button')
+                    .addEventListener('click', this.routeTo.bind(this))
+                
+            }
+
+            routeTo ()
+            {
+                console.log("Button is Clicked");
+
+                console.log(this.url);
+
+                window.location.href = this.url; // Redirects to the URL
+            }
+        }
+
+        const nextUrl = new route()
+
+
+
+
+    </script>
+    
+</body>
+</html>
